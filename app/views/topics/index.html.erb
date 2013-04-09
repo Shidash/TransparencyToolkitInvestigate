@@ -2,7 +2,7 @@
 <div class="page-header">
   <h1>Topics to Investigate</h1>
 </div>
-<%= render :partial => "form" %>
+
 <br />
 <table class="table table-striped table-condensed">
   <tbody>
@@ -27,7 +27,8 @@
             :method => :delete,
             :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-mini btn-danger' %></div>
-	    <%= render :partial => "questions/question", :locals => { :topic => topic } %>
+             <%= render :partial => "questions/question", :locals  => { :topic => topic } %>
+
 	  </div</td>
     </tr>
     <% end %>

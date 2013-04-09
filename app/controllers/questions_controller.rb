@@ -4,7 +4,7 @@ class QuestionsController < ApplicationController
   def index
     @topic = Topic.find(params[:topic_id])
     @questions = @topic.questions.all
-    @question = @topic.questions.new
+    # @question = @topic.questions.new
 
     respond_to do |format|
       format.html # index.html.erb

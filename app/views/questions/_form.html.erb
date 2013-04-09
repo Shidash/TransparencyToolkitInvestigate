@@ -1,4 +1,4 @@
-<%= simple_form_for @topic.questions.build, :html => { :class => 'form-inline'
+<%= simple_form_for [topic, topic.questions.build], :html => { :class => 'form-inline'
 } do |f| %>
 <div class="accordion" id="accordion3">
   <div class="accordion-group">
