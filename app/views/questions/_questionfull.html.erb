@@ -1,5 +1,5 @@
 <%- model_class = Question -%>
-
+<%= render :partial => "questions/form", :locals => { :topic => topic } %>
 <br />
 <table class="table table-striped table-condensed">
   <thead>
@@ -8,7 +8,7 @@
     </tr>
   </thead>
   <tbody>
-    <% topic.questions.each do |question| %>
+    <% topic.questions.delete_if(&:new_record?).each do |question| %>
       <tr>
         <td><%= link_to question.question, question_path(question) %></td>
 	<td>

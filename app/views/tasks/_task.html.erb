@@ -2,6 +2,7 @@
 <div class="page-header">
 </div>
 
+<%= render :partial => "tasks/form", :locals => { :question => question } %>
 <br />
 <table class="table table-condensed">
   <thead>
@@ -10,7 +11,7 @@
     </tr>
   </thead>
   <tbody>
-    <% question.tasks.each do |task| %>
+    <% question.tasks.delete_if(&:new_record?).each do |task| %>
       <tr>
         <td><%= link_to task.task, task_path(task) %></td>
       </tr>
