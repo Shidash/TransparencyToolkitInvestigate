@@ -3,7 +3,7 @@ class TopicsController < ApplicationController
   # GET /topics.json
   def index
     @topics = Topic.all
-    @topic = Topic.find(params[:topic_id])
+    @topic = Topic.find(params[:id])
 
     respond_to do |format|
       format.html # index.html.erb
