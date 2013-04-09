@@ -1,0 +1,19 @@
+<%- model_class = Task -%>
+<div class="page-header">
+</div>
+
+<br />
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Tasks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% question.tasks.each do |task| %>
+      <tr>
+        <td><%= link_to task.task, task_path(task) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

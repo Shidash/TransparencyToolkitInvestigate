@@ -1,0 +1,19 @@
+<%- model_class = Question -%>
+<div class="page-header">
+</div>
+<%= render :partial => "questions/form", :locals => { :topic => @topic } %>
+<br />
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Questions</th>
+    <tr>
+  </thead>
+  <tbody>
+    <% topic.questions.each do |question| %>
+      <tr>
+        <td><%= link_to question.question, question_path(question) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

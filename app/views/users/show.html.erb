@@ -1,0 +1,28 @@
+<%- model_class = User -%>
+<% provide(:title, @user.name) %>
+<div class="page-header" style="white-space: nowrap;">
+  <h1>
+    <%= gravatar_for @user %>
+    <%= @user.name %>
+    <div align="right" style="display:inline-block; align: right;">
+      <% if signed_in? && current_user?(@user) %>
+      <%= link_to '<i class="icon-edit"></i>'.html_safe, edit_user_path(@user)
+      %>
+
+  <% elsif signed_in? && current_user.admin? && !current_user?(@user) %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              user_path(@user),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default =>
+  t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+  <% else %>
+
+  <% end %>
+    </div>
+  </h1>
+</div>
+
+<b>Name:</b> <%= @user.name %>
+<br />
+<b>Email:</b> <%= @user.email %>

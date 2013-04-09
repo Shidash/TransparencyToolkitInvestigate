@@ -1,0 +1,19 @@
+<%= simple_form_for [topic, topic.questions.build], :html => { :class => 'form-inline' } do |f| %>
+<div class="accordion" id="accordion3">
+  <div class="accordion-group">
+    <div class="accordion-heading addquestion">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3"
+	 href="#addquestion">
+	<%= f.input :question, label: false, placeholder: 'Ask a question?' %>
+      </a>
+    </div>
+    <div id="addquestion" class="accordion-body collapse">
+      <div class="accordion-inner">
+	<%= f.input :details, label: false, placeholder: 'Question details' %>
+	<div align="right">
+	  <%= f.submit 'Ask Question?', :class => 'btn-primary btn-small' %>
+	</div>
+      </div>
+    </div>
+  </div>
+<% end %>

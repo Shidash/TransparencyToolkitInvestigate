@@ -1,0 +1,19 @@
+<%= simple_form_for @topic, :html => { :class => 'form-inline' } do |f| %>
+<div class="accordion" id="accordion2">
+<div class="accordion-group">
+<div class="accordion-heading addinfo">
+<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#addinfo">
+  <%= f.input :title, label: false, placeholder: 'Add a topic to investigate'
+      %>
+</a>
+</div>
+  <div id="addinfo" class="accordion-body collapse">
+    <div class="accordion-inner">
+      <%= f.input :description, label: false, placeholder: 'Description of topic and additional information' %>
+      <div align="right">
+	<%= f.submit 'Add Topic', :class => 'btn-primary btn-small' %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

@@ -1,0 +1,21 @@
+<%= simple_form_for question.tasks.build, :html => { :class =>
+'form-inline' } do |f| %>
+<div class="accordion" id="accordion4">
+  <div class="accordion-group">
+    <div class="accordion-heading addinfo">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion4"
+	 href="#addtask">
+	<%= f.input :task, label: false, placeholder: 'Add a task' %>
+      </a>
+    </div>
+    <div id="addtask" class="accordion-body collapse">
+      <div class="accordion-inner">
+	<%= f.input :description, label: false, placeholder: 'Description of
+	the task.' %>
+	<div align="right">
+	  <%= f.submit 'Add Task', :class => 'btn-primary btn-small' %>
+	</div>
+      </div>
+    </div>
+</div>
+<% end %>
