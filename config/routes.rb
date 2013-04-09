@@ -1,8 +1,5 @@
 Toolkit::Application.routes.draw do
 
-  resources :tasks
-
-
   root :to => 'topics#index'
 
   resources :topics do

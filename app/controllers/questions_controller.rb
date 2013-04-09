@@ -45,8 +45,8 @@ class QuestionsController < ApplicationController
   # POST /questions
   # POST /questions.json
   def create
-    @topic = Topic.find(params[:topic_id])
-    @question = @topic.questions.build(params[:question])
+     @topic = Topic.find(params[:topic_id])
+     @question = @topic.questions.create(params[:question])
 
     respond_to do |format|
       if @question.save
