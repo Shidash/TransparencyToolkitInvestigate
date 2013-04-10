@@ -78,7 +78,7 @@ class TasksController < ApplicationController
     @task.destroy
 
     respond_to do |format|
-      format.html { redirect_to :back, notice: 'Task was successfully deleted.' }
+      format.html { redirect_to root_path, notice: 'Task was successfully deleted.' }
       format.json { head :no_content }
     end
   end

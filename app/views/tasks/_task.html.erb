@@ -8,12 +8,16 @@
   <thead>
     <tr>
       <th>Tasks</th>
+      <th>Skills Required</th>
+      <th>Hours</th>
     </tr>
   </thead>
   <tbody>
     <% question.tasks.delete_if(&:new_record?).each do |task| %>
       <tr>
         <td><%= link_to task.task, task_path(task) %></td>
+	<td><%= task.tag_list %></td>
+	<td><%= task.time %> </td>
       </tr>
     <% end %>
   </tbody>

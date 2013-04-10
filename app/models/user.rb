@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :password, :password_confirmation
+  attr_accessible :email, :name, :password, :password_confirmation, :tag_list, :time
   has_secure_password
 
   before_save :create_remember_token
@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 8 }
   validates :password_confirmation, presence: true
+  acts_as_taggable
 
   private
     def create_remember_token

@@ -4,7 +4,11 @@
 </div>
 
 <%= @task.description %>
-
+<br /><br />
+Skills Required: <%= @task.tag_list %>
+<br />
+Hours: <%= @task.time %>
+<br />
 <div align="right">
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_task_path(@task), :class => 'btn' %>

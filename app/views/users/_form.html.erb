@@ -3,9 +3,9 @@
   <%= f.input :email %>
   <%= f.input :password %>
   <%= f.input :password_confirmation, label: 'Confirm Password:' %>
+  <%= f.input :time, label: 'Hours Available:' %>
+  <%= f.input :tag_list, label: 'Skills:' %>
   <div id="register">
     <%= f.button :submit, :class => 'btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                users_path, :class => 'btn' %>
   </div>
 <% end %>

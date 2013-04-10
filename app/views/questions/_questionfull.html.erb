@@ -10,7 +10,7 @@
   <tbody>
     <% topic.questions.delete_if(&:new_record?).each do |question| %>
       <tr>
-        <td><%= link_to question.question, question_path(question) %></td>
+        <td><%= question.question %></td>
 	<td>
 	  <div align="right">
 	      <button type="button" style="background-color:                                               
