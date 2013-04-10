@@ -47,13 +47,15 @@
           <a class="brand" href="/">Transparency Toolkit</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
-	 
+	      <% if signed_in?%>
+	      <li><%= link_to "Task Portal", "/users/#{current_user.id}/portal" %></li>
+	      <% else %>
+	      <% end %>
             </ul>
 	    <div class="pull-right">
 	      <% if signed_in? %>
 	      <ul class="nav pull-right">
-		<li class="dropdown"><a href="#" class="dropdown-toggle"
-		data-toggle="dropdown"><i class="icon-user"></i>
+		<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i>
 		<%= current_user.name %>
 		 <b class="caret"></b></a>
 		  <ul class="dropdown-menu">
@@ -61,8 +63,8 @@
 		    Profile'.html_safe, current_user %></li>
 		    <li><%= link_to '<i class="icon-edit"></i>
 		    Edit Profile'.html_safe, edit_user_path(current_user) %></li>
-		    <li><%= link_to '<i class="icon-signout"></i> Logout'.html_safe, signout_path, method: "delete"
-		    %></li>  
+		    <li><%= link_to '<i class="icon-signout"></i>
+		    Logout'.html_safe, signout_path, method: "delete" %></li>  
 		  </ul>
 	      </ul>
 	      <% else %>

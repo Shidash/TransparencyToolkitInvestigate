@@ -17,6 +17,7 @@ Toolkit::Application.routes.draw do
   resources :results
 
   resources :users
+  match "users/:id/portal" => "users#portal"
   resources :sessions, only: [:new, :create, :destroy]
 
   match '/signup',  to: 'users#new'

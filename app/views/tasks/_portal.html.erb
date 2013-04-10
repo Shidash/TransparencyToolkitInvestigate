@@ -1,0 +1,21 @@
+<%- model_class = Task -%>
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Tasks</th>
+      <th>Skills Required</th>
+      <th>Hours</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= Task.tagged_with([user.tag_list], :any => true).each do |task| %>
+    <% if task.time <= user.time %>
+       <tr>
+         <td><%= link_to task.task, task_path(task) %></td>
+	 <td><%= task.tag_list %></td>
+	 <td><%= task.time %> </td>
+       </tr>
+       <% end %>
+       <% end %>
+  </tbody>
+</table>

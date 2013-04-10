@@ -1,0 +1,8 @@
+<%- model_class = User -%>
+<div class="page-header">
+  <h1><%= @user.name %>'s Portal</h1>
+</div>
+
+Tasks that match your skills and time available:<br />
+<%= render :partial => "tasks/portal", :locals => {:user => @user } %>
+
