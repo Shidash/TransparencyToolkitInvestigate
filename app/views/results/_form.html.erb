@@ -1,0 +1,19 @@
+<%= simple_form_for [task, task.results.build], :html => { :multipart => true, :class => 'form-inline' } do |f| %>
+<div class="accordion" id="accordion5">
+  <div class="accordion-group">
+    <div class="accordion-heading addresults">
+      <a class="accordion-toggle" data-toggle="collapse"
+  data-parent="#accordion5" href="#addresult">
+	<%= f.input :description, label: false, placeholder: 'Contribute results from the task' %>
+      </a>
+    </div>
+    <div id="addresult" class="accordion-body collapse">
+      <div class="accordion-inner">
+	<%= f.file_field :document, label: false %>
+	<div align="right">
+	  <%= f.submit 'Add Results', :class => 'btn-primary btn-small' %>
+	</div>
+      </div>
+    </div>
+  </div>
+<% end %>

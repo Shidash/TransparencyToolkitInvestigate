@@ -41,8 +41,7 @@ class TasksController < ApplicationController
   # POST /tasks
   # POST /tasks.json
   def create
-    # @task = Task.new(params[:task])
-    @question = Question.find(parans[:question_id])
+    @question = Question.find(params[:question_id])
     @task = @question.tasks.new(params[:task])
 
     respond_to do |format|
@@ -79,7 +78,7 @@ class TasksController < ApplicationController
     @task.destroy
 
     respond_to do |format|
-      format.html { redirect_to tasks_url }
+      format.html { redirect_to :back, notice: 'Task was successfully deleted.' }
       format.json { head :no_content }
     end
   end

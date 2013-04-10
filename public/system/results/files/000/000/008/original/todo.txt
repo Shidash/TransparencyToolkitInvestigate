@@ -1,0 +1,74 @@
+Make edit question work on topic page
+Make create task form shown on question page
+     Make edit task work on task and questions page
+Make add results form
+    Make edit results form
+    Make delete results form
+Update topic edit form
+    Update question edit form
+    Update task edit form
+Redirect questions edit to question page
+    Redirect questions create to create page
+    Redirect questions destroy to parent topic
+    Redirect tasks edit to task page
+    Redirect tasks destroy to question page
+    Redirect tasks edit results to task page
+
+Add skill tags to tasks
+    Add skill tags to create and edit forms
+    Add skill tags to display
+Add time estimate to tasks
+    Add time estimate to create and edit forms
+    Add time estimate to display
+Add skills to users
+    Allow users to enter skills on register and edit
+    Display skills
+Add time available to users
+    Allow users to enter time available on register and edit
+    Display time available
+Task portal page
+    Find tasks that match skills
+    Find tasks that are less than time available
+    Show tasks that fit both of these
+Setup audited with users
+    Setup audited for topics
+    Setup audited for questions
+    Setup audited for tasks
+    Make audio history page
+
+Assign user to task
+     Stop other users from being assigned to task 
+     Drop task after preset time period
+     Let user drop task on portal
+     Let user drop task on task page
+     Drop task if user drops it
+     Specify how many users can be assigned in task
+     Unlimit number of assigned users
+     Assign multiple users to task
+     Let user choose to be assigned to task on portal
+     Let user choose to be assigned to task on task page
+     Show tasks user is assigned to on portal
+Allow users to mark tasks as complete
+      Mark question complete when all tasks are complete
+      Mark topic complete when all questions are complete
+      Show progress bar for question
+      Show progress bar for topic
+      Make sub-tasks that depend on others
+      Allow people to mark a task depending on another
+      	    Make it editable
+      Open sub-tasks only when previous task is complete
+
+Voting arrows for topics
+       Give every user one vote
+       Make clickable
+       Tally up and down votes
+       Use tally to sort
+
+
+
+
+Other:
+1. Release code
+2. Setup 4 tests
+3. Prepare pitch/slide/props
+4. Make toolkit site

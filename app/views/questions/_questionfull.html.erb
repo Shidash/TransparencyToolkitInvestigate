@@ -25,7 +25,7 @@
 	    <%= question.details %>
 	    <div align="right">
 	    <%= link_to t('.edit', :default => t("helpers.links.edit")),
-            edit_question_path(question, topic), :class => 'btn btn-mini' %>
+            edit_question_path(question), :class => 'btn btn-mini' %>
             <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
             question_path(question),
             :method => :delete,

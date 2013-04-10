@@ -78,8 +78,9 @@ class QuestionsController < ApplicationController
   # DELETE /questions/1
   # DELETE /questions/1.json
   def destroy
-    @topic = Topic.find(params[:topic_id])
-    @question = @topic.questions.find(params[:question])
+    # @topic = Topic.find(params[:topic_id])
+    # @question = @topic.questions.find(params[:question])
+    @question = Question.find(params[:id])
     @question.destroy
 
     respond_to do |format|

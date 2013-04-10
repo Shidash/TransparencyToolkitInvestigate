@@ -10,7 +10,11 @@ Toolkit::Application.routes.draw do
     resources :tasks
   end
 
-  resources :tasks
+  resources :tasks do
+    resources :results
+  end
+
+  resources :results
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
