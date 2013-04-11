@@ -1,10 +1,6 @@
 Toolkit::Application.routes.draw do
 
-  root :to => 'topics#index'
-
-  resources :topics do
-    resources :questions
-  end
+  root :to => 'questions#index'
 
   resources :questions do
     resources :tasks

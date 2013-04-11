@@ -14,12 +14,12 @@
         <td>
 	  <div align="right">
             <button type="button" style="background-color: transparent;
-					 border-color: transparent; cursor: default;" data-toggle="collapse" data-target="#<%= task.id %>"><icon class="icon-plus"></i></button></div>
+					 border-color: transparent; cursor: default;" data-toggle="collapse" data-target="#<%= task.id %>task"><icon class="icon-plus"></i></button></div>
 </div>
 </td>
 </tr>
 <tr>
-  <td><div id="<%= task.id %>" class="collapse">
+  <td><div id="<%= task.id %>task" class="collapse">
       <%= task.description %>
       <div align="right">
 	<%= link_to t('.edit', :default => t("helpers.links.edit")),
@@ -29,7 +29,9 @@
 	:method => :delete,
 	:data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
 	:class => 'btn btn-mini btn-danger' %>
-      </div></div>
+      </div><br />
+      <%= render :partial => "results/result", :locals => { :task => task } %>
+    </div>
   </td>
 </tr>
 <% end %>

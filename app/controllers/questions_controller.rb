@@ -2,8 +2,8 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @topic = Topic.find(params[:topic_id])
-    @questions = @topic.questions.all
+    @questions = Question.all
+    @question = Question.new
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,8 +14,7 @@ class QuestionsController < ApplicationController
   # GET /questions/1
   # GET /questions/1.json
   def show
-    @topic = Topic.find(params[:topic_id])
-    @question = @topic.questions.find(params[:question])
+    @question = Question.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -26,8 +25,7 @@ class QuestionsController < ApplicationController
   # GET /questions/new
   # GET /questions/new.json
   def new
-    @topic = Topic.find(params[:topic_id])
-    @question = @topic.questions.new
+    @question = Question.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -37,19 +35,17 @@ class QuestionsController < ApplicationController
 
   # GET /questions/1/edit
   def edit
-    @topic = Topic.find(params[:topic_id])
-    @question = @topic.questions.find(params[:question])
+    @question = Question.find(params[:id])
   end
 
   # POST /questions
   # POST /questions.json
   def create
-     @topic = Topic.find(params[:topic_id])
-     @question = @topic.questions.create(params[:question])
+    @question = Question.new(params[:question])
 
     respond_to do |format|
       if @question.save
-        format.html { redirect_to :back, notice: 'Question was successfully created.' }
+        format.html { redirect_to :back, notice: 'Goal/question was successfully created.' }
         format.json { render json: @question, status: :created, location: @question }
       else
         format.html { render action: "new" }
@@ -61,12 +57,11 @@ class QuestionsController < ApplicationController
   # PUT /questions/1
   # PUT /questions/1.json
   def update
-    @topic = Topic.find(params[:topic_id])
-    @question = @topic.questions.find(params[:question])
+    @question = Question.find(params[:id])
 
     respond_to do |format|
       if @question.update_attributes(params[:question])
-        format.html { redirect_to :back, notice: 'Question was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Goal/question was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -84,7 +79,7 @@ class QuestionsController < ApplicationController
     @question.destroy
 
     respond_to do |format|
-      format.html { redirect_to :back, notice: 'Question was successfully deleted.' }
+      format.html { redirect_to :back, notice: 'Goal/question was successfully deleted.' }
       format.json { head :no_content }
     end
   end

@@ -10,11 +10,11 @@
     </div>
     <div id="addtask" class="accordion-body collapse">
       <div class="accordion-inner">
-	<%= f.input :description, label: false, placeholder: 'Description of the task.' %>
+	<%= f.input :description, label: false, placeholder: 'Description of the task' %>
 	<br />
 	<%= f.input :tag_list, label: false, placeholder: 'Skills required for task' %>
 	<br />
-	<%= f.input :time, label: false, placeholder: 'Hours task will take' %>
+	<%= f.input :time, label: false, placeholder: '# of hours task takes' %>
 	<div align="right">
 	  <%= f.submit 'Add Task', :class => 'btn-primary btn-small' %>
 	</div>
