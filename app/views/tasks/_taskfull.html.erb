@@ -20,7 +20,13 @@
 </tr>
 <tr>
   <td><div id="<%= task.id %>task" class="collapse">
-      <%= task.description %>
+      <ul class="nav nav-tabs" id="tasktabs" data-tabs="tabs">
+        <li class="active"><a href="#detailstask<%= task.id %>" data-toggle="tab">Details</a></li>
+        <li><a href="#historytask<%= task.id %>" data-toggle="tab">Edit History</a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="detailstask<%= task.id %>">
+	  <%= task.description %><br />
       <div align="right">
 	<%= link_to t('.edit', :default => t("helpers.links.edit")),
 	edit_task_path(task), :class => 'btn btn-mini' %>
@@ -31,6 +37,10 @@
 	:class => 'btn btn-mini btn-danger' %>
       </div><br />
       <%= render :partial => "results/result", :locals => { :task => task } %>
+    </div></div>
+      <div class="tab-pane" id="historytask<%= task.id %>">
+        <%= render :partial => "history", :locals => { :task => task } %>
+      </div>
     </div>
   </td>
 </tr>

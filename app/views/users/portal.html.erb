@@ -1,8 +1,13 @@
 <%- model_class = User -%>
 <div class="page-header">
-  <h1><%= @user.name %>'s Portal</h1>
+  <h1>Task Match</h1>
 </div>
 
-Tasks that match your skills and time available:<br />
+The following table lists the tasks you can complete with your skillset and
+hours available for this investigation. To learn more about the task and add
+results, please click the task name. If you want to see tasks for different skills, please
+<%= link_to "update your skills list", edit_user_path(@user) %> or go to the
+<%= link_to "main page", root_path %>.
+<br /><br />
 <%= render :partial => "tasks/portal", :locals => {:user => @user } %>
 

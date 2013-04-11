@@ -2,14 +2,20 @@
 <div class="page-header">
   <h1><%= @task.task %></h1>
 </div>
-
-<%= @task.description %>
-<br /><br />
-Skills Required: <%= @task.tag_list %>
-<br />
-Hours: <%= @task.time %>
-<br />
-<div align="right">
+<ul class="nav nav-tabs" id="tasktabs" data-tabs="tabs">
+  <li class="active"><a href="#detailstask<%= @task.id %>"
+			data-toggle="tab">Details</a></li>
+  <li><a href="#historytask<%= @task.id %>" data-toggle="tab">Edit History</a></li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane active" id="detailstask<%= @task.id %>">
+    <%= @task.description %>
+    <br /><br />
+    Skills Required: <%= @task.tag_list %>
+    <br />
+    Hours: <%= @task.time %>
+    <br />
+    <div align="right">
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_task_path(@task), :class => 'btn' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
@@ -17,6 +23,10 @@ Hours: <%= @task.time %>
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
+  </div></div>
+ <div class="tab-pane" id="historytask<%= @task.id %>">
+        <%= render :partial => "history", :locals => { :task => @task } %>
+ </div>
 </div>
 <br />
 

@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     if @user.save
       sign_in @user
       flash[:success] = "Welcome to the Transparency Toolkit!"
-      redirect_to @user
+      redirect_to root_path
     else
       render 'new'
     end
