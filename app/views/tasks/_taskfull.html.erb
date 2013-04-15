@@ -14,18 +14,21 @@
         <td>
 	  <div align="right">
             <button type="button" style="background-color: transparent;
-					 border-color: transparent; cursor: default;" data-toggle="collapse" data-target="#<%= task.id %>task"><icon class="icon-plus"></i></button></div>
+					 border-color: transparent; cursor:
+					 default;" data-toggle="collapse"
+					 data-target="#<%= task.id
+					 %>task<%= question.id %>"><icon class="icon-plus"></i></button></div>
 </div>
 </td>
 </tr>
 <tr>
-  <td><div id="<%= task.id %>task" class="collapse">
+  <td><div id="<%= task.id %>task<%= question.id %>" class="collapse">
       <ul class="nav nav-tabs" id="tasktabs" data-tabs="tabs">
-        <li class="active"><a href="#detailstask<%= task.id %>" data-toggle="tab">Details</a></li>
-        <li><a href="#historytask<%= task.id %>" data-toggle="tab">Edit History</a></li>
+        <li class="active"><a href="#details<%= question.id %>task<%= task.id %>" data-toggle="tab">Details</a></li>
+        <li><a href="#history<%= question.id %>task<%= task.id %>" data-toggle="tab">Edit History</a></li>
       </ul>
       <div class="tab-content">
-        <div class="tab-pane active" id="detailstask<%= task.id %>">
+        <div class="tab-pane active" id="details<%= question.id %>task<%= task.id %>">
 	  <%= task.description %><br />
       <div align="right">
 	<%= link_to t('.edit', :default => t("helpers.links.edit")),
@@ -38,8 +41,9 @@
       </div><br />
       <%= render :partial => "results/result", :locals => { :task => task } %>
     </div></div>
-      <div class="tab-pane" id="historytask<%= task.id %>">
-        <%= render :partial => "history", :locals => { :task => task } %>
+      <div class="tab-pane" id="history<%= question.id %>task<%= task.id %>">
+        <%= render :partial => "history", :locals => { :task => task,
+        :question => question } %>
       </div>
     </div>
   </td>
