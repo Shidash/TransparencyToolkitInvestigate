@@ -1,0 +1,18 @@
+<%= simple_form_for task, :html => { :class => 'form-inline' } do |f| %>
+<%= f.input :task, label: false, placeholder: 'Add a task' %>
+<%= f.input :description, label: false, placeholder: 'Description of the task' %>
+<br />
+<%= f.input :tag_list, label: false, placeholder: 'Skills required for task' %>
+<%= f.input :time, label: false, placeholder: '# of hours task takes' %>
+<br />
+<%= f.input :complete, label: 'Task Complete?' %>
+<div align="right">
+  <%= f.submit 'Update', :class => 'btn' %>
+    <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+    task_path(@task),
+    :method => 'delete',
+    :data => { :confirm => t('.confirm', :default =>
+    t("helpers.links.confirm", :default => 'Are you sure?')) },
+    :class => 'btn btn-danger' %>
+</div>
+<% end %>
