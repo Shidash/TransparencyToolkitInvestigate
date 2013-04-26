@@ -47,25 +47,21 @@ investigation and release of actionable information. It is still in the early
       <td><div id="<%= question.id %>" class="collapse">
 	  <ul class="nav nav-tabs" id="tabs" data-tabs="tabs">
 	    <li class="active"><a href="#details<%= question.id %>" data-toggle="tab">Details</a></li>
-	    <li><a href="#history<%= question.id %>" data-toggle="tab">Edit History</a></li>
+	    <li><a href="#edit<%= question.id %>" data-toggle="tab">Edit</a></li>
+	    <li><a href="#history<%= question.id %>" data-toggle="tab">History</a></li>
 	  </ul>
 	  <div class="tab-content">
 	  <div class="tab-pane active" id="details<%= question.id %>">
-	  <%= question.details %><br />
-	  <div align="right">
-	    <%= link_to t('.edit', :default => t("helpers.links.edit")),
-            edit_question_path(question), :class => 'btn btn-mini' %>
-            <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-            question_path(question),
-            :method => :delete,
-            :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %></div><br />
+	  <%= question.details %><br /><br />
           <%= render :partial => "tasks/taskfull", :locals => { :question => question } %>
 	  </div></div>
+	  <div class="tab-pane" id="edit<%= question.id %>">
+            <%= render :partial => "editform", :locals => { :question => question } %>
+          </div>
 	  <div class="tab-pane" id="history<%= question.id %>">
 	    <%= render :partial => "history", :locals => { :question => question } %>
 	  </div>
-	  <div>
+	</div>
       </td>
     </tr>
     <% end %>

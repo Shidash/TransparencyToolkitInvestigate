@@ -1,0 +1,13 @@
+<%= simple_form_for question, :html => { :class => 'form-inline'} do |f| %>
+<%= f.input :question, label: false, placeholder: 'Set a goal or ask a question' %>
+<%= f.input :details, label: false, placeholder: 'Goal or question details' %>
+<div align="right">
+  <%= f.submit 'Update', :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+    question_path(question),
+    :method => 'delete',
+    :data => { :confirm => t('.confirm', :default =>
+    t("helpers.links.confirm", :default => 'Are you sure?')) },
+    :class => 'btn btn-danger' %>
+</div>
+<% end %>
