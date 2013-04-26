@@ -3,11 +3,11 @@
   <div class="accordion-group">
     <div class="accordion-heading addresults">
       <a class="accordion-toggle" data-toggle="collapse"
-  data-parent="#accordion5" href="#addresult">
+  data-parent="#accordion5" href="#addresult<%= task.id %>">
 	<%= f.input :description, label: false, placeholder: 'Contribute results from the task' %>
       </a>
     </div>
-    <div id="addresult" class="accordion-body collapse">
+    <div id="addresult<%= task.id %>" class="accordion-body collapse">
       <div class="accordion-inner">
 	<%= f.file_field :document, label: false %>
 	<div align="right">

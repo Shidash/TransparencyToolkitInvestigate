@@ -12,21 +12,19 @@
     <tr>
       <td>
 	<ul class="nav nav-tabs" id="resulttabs" data-tabs="tabs">
-          <li class="active"><a href="#detailsresult<%= result.id %>"
-				data-toggle="tab">Details</a></li>
-	  <li><a href="#editresult<%= result.id %>" data-toggle="tab">Edit</a></li>
-          <li><a href="#historyresult<%= result.id %>" data-toggle="tab">History</a></li>
+          <li class="active"><a href="#details<%= task.id %>result<%= result.id %>" data-toggle="tab">Details</a></li>
+	  <li><a href="#edit<%= task.id %>result<%= result.id %>" data-toggle="tab">Edit</a></li>
+          <li><a href="#history<%= task.id %>result<%= result.id %>" data-toggle="tab">History</a></li>
 	</ul>
 	<div class="tab-content">
-          <div class="tab-pane active" id="detailsresult<%= result.id %>">
+          <div class="tab-pane active" id="details<%= task.id%>result<%= result.id %>">
 	    <%= result.description %><br />
 	    <%= link_to result.document.identifier, result.document.url %><br />
 	  </div>
-	  <div class="tab-pane" id="editresult<%= result.id %>">
-	    <%= render :partial => "results/editform", :locals => { :result =>
-	    result, :task => task } %>
+	  <div class="tab-pane" id="edit<%= task.id %>result<%= result.id %>">
+	    <%= render :partial => "results/editform", :locals => { :result => result, :task => task } %>
           </div>
-	  <div class="tab-pane" id="historyresult<%= result.id %>">
+	  <div class="tab-pane" id="history<%= task.id %>result<%= result.id %>">
             <%= render :partial => "results/history", :locals => { :result => result } %>
 	  </div>
 	</div>

@@ -34,7 +34,7 @@ investigation and release of actionable information. It is still in the early
 	<td>
 	  <div style="float: left; width: 300px"><%= question.question %></div>
 	  <div class="progress" style="width: 500px; margin: 0px; float: left;">
-	    <div class="bar" style="width: 100px;"></div>
+	    <div class="bar" style="width: <%= progress(question) -%>px"></div>
 	  </div>
 	</td>
 	<td><div align="right">
