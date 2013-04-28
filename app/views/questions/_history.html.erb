@@ -1,6 +1,6 @@
 <%- model_class = Question -%>
 
-<table>
+<table style="background:transparent;">
   <thead>
     <tr>
       <th>User</th>
@@ -8,17 +8,17 @@
       <th>Time Changed</th>
     </tr>
   </thead>
-<tbody>
-  <% @question.versions.each do |version| %>
-  <tr>
-    <td><% if version.whodunnit!= 'anonymous' %>
+<tbody style="background:transparent;">
+  <% question.versions.each do |version| %>
+  <tr style="background:transparent;">
+    <td style="background:transparent; border: 0;"><% if version.whodunnit!= 'anonymous' %>
       <%= User.find(version.whodunnit).name %>
       <% else %>
       <%= version.whodunnit %>
       <% end %>
     </td>
-    <td><%= version.event %></td>
-    <td><%= version.created_at %></td>
+    <td style="background:transparent; border: 0;"><%= version.event %></td>
+    <td style="background:transparent; border: 0;"><%= version.created_at %></td>
   </tr>
   <% end %>
 </tbody>
