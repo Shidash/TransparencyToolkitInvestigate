@@ -1,17 +1,24 @@
 <%- model_class = Task -%>
 <%= render :partial => "tasks/form", :locals => { :question => question } %>
 <br />
-<table class="table table-striped table-condensed">
-  <thead>
-    <tr>
-      <th>Tasks</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% question.tasks.delete_if(&:new_record?).each do |task| %>
-    <tr>
-      <td><%= link_to task.task, task_path(task) %></td>
-    </tr>
+<table class="table-condensed" style="background:transparent;">
+<thead>
+  <tr>
+    <th>Tasks</th>
+  </tr>
+</thead>
+<tbody style="background: transparent;">
+<% question.tasks.delete_if(&:new_record?).each do |task| %>
+<tr style="background: transparent;">
+  <td style="background: transparent; border: 0;">
+    <%= simple_form_for task, :html => { :class => 'form-inline' } do |f| %>
+    <%= f.input :complete, label: false %>
+    <% end %>
+  </td>
+  <td style="background: transparent; padding-top: 5px; border: 0;">
+    <%= link_to task.task, task_path(task) %>
+  </td>
+</tr>
 <% end %>
 </tbody>
 </table>
