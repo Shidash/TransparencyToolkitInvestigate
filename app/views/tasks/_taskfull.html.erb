@@ -10,39 +10,8 @@
   <tbody>
     <% question.tasks.delete_if(&:new_record?).each do |task| %>
     <tr>
-        <td><%= link_to task.task, task_path(task) %></td>
-        <td>
-	  <div align="right">
-            <button type="button" style="background-color: transparent;
-					 border-color: transparent; cursor:
-					 default;" data-toggle="collapse"
-					 data-target="#<%= task.id
-					 %>task<%= question.id %>"><icon class="icon-plus"></i></button></div>
-</div>
-</td>
-</tr>
-<tr>
-  <td><div id="<%= task.id %>task<%= question.id %>" class="collapse">
-      <ul class="nav nav-tabs" id="tasktabs" data-tabs="tabs">
-        <li class="active"><a href="#details<%= question.id %>task<%= task.id%>" data-toggle="tab">Details</a></li>
-	<li><a href="#edit<%= question.id %>task<%= task.id %>" data-toggle="tab">Edit</a></li>
-        <li><a href="#history<%= question.id %>task<%= task.id %>" data-toggle="tab">History</a></li>
-      </ul>
-      <div class="tab-content">
-        <div class="tab-pane active" id="details<%= question.id %>task<%= task.id %>">
-	  <%= task.description %><br />
-	  <br />
-	  <%= render :partial => "results/result", :locals => { task: task, question: question} %>
-    </div></div>
-      <div class="tab-pane" id="edit<%= question.id %>task<%= task.id%>">
-        
-      </div>
-      <div class="tab-pane" id="history<%= question.id %>task<%= task.id %>">
-        <%= render :partial => "history", :locals => { :task => task } %>        
-      </div>
-    </div>
-  </td>
-</tr>
+      <td><%= link_to task.task, task_path(task) %></td>
+    </tr>
 <% end %>
 </tbody>
 </table>

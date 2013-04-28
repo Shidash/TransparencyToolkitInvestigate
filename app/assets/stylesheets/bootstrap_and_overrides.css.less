@@ -1,5 +1,5 @@
-@import "twitter/bootstrap/bootstrap";
-@import "twitter/bootstrap/responsive";
+@import "bootstrap.min.css";
+@import "variables.less";
 
 // Set the correct sprite paths
 @iconSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings.png");
@@ -39,6 +39,10 @@ textfield{
 width: 960px;
 }
 
+table{
+background: transparent;
+}
+
 ul.nav li.dropdown:hover > ul.dropdown-menu{
     display: block;    
 }
@@ -53,4 +57,9 @@ a.brand:hover{
 
 a:hover{
 	background-color: transparent;
+}
+
+// Background image is from subtlepatterns.com
+body { 
+    background: url(cream_dust.png) repeat 0 0;
 }

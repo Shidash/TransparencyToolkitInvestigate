@@ -2,7 +2,7 @@
 <%= f.input :description, label: false, placeholder: 'Contribute results from the task' %>
 <%= f.file_field :document, label: false %>
 <div align="right">
-  <%= f.submit 'Update', :class => 'btn btn-small' %>
+  <%= f.submit 'Update', :class => 'btn-primary btn-small' %>
   <%= link_to t('.destroy', :default =>
   t("helpers.links.destroy")),
   result_path(result),

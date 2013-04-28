@@ -10,8 +10,10 @@
 
       <%= f.label :password %>
       <%= f.password_field :password %>
-
-      <%= f.submit "Login", class: "btn btn-large btn-primary" %>
+      <br />
+      <div id="login">
+	<%= f.submit "Login", class: "btn btn-primary btn-small" %>
+      </div>
     <% end %>
 
     <p>New user? <%= link_to "Register", signup_path %></p>

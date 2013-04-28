@@ -2,7 +2,7 @@
 <%= f.input :question, label: false, placeholder: 'Set a goal or ask a question' %>
 <%= f.input :details, label: false, placeholder: 'Goal or question details' %>
 <div align="right">
-  <%= f.submit 'Update', :class => 'btn' %>
+  <%= f.submit 'Update', :class => 'btn-primary btn-small' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
     question_path(question),
     :method => 'delete',

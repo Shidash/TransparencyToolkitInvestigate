@@ -7,7 +7,7 @@
 <br />
 <%= f.input :complete, label: 'Task Complete?' %>
 <div align="right">
-  <%= f.submit 'Update', :class => 'btn' %>
+  <%= f.submit 'Update', :class => 'btn-primary btn-small' %>
     <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
     task_path(@task),
     :method => 'delete',
