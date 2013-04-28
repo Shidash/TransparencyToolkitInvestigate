@@ -1,6 +1,6 @@
 <%- model_class = Result -%>
 
-<table>
+<table style="background: transparent; border: 0;">
   <thead>
     <tr>
       <th>User</th>
@@ -8,17 +8,17 @@
       <th>Time Changed</th>
     </tr>
   </thead>
-<tbody>
+<tbody style="border: 0;">
   <% result.versions.each do |version| %>
-  <tr>
-    <td><% if version.whodunnit!= 'anonymous' %>
+  <tr style="background: transparent; border: 0;">
+    <td style="border: 0;"><% if version.whodunnit!= 'anonymous' %>
       <%= User.find(version.whodunnit).name %>
       <% else %>
       <%= version.whodunnit %>
       <% end %>
     </td>
-    <td><%= version.event %></td>
-    <td><%= version.created_at %></td>
+    <td style="border: 0;"><%= version.event %></td>
+    <td style="border: 0;"><%= version.created_at %></td>
   </tr>
   <% end %>
 </tbody>

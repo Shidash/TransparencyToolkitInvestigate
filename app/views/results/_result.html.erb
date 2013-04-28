@@ -1,7 +1,7 @@
 <%- model_class = Result -%>
 <%= render :partial => "results/form", :locals => { :task => task } %>
 <br />
-<table class="table table-striped table-condensed">
+<table class="table table-condensed" style="background:transparent; border:0;">
   <thead>
     <tr>
       <th>Results</th>
@@ -9,8 +9,8 @@
   </thead>
   <tbody>
     <% task.results.delete_if(&:new_record?).each do |result| %>
-    <tr>
-      <td>
+    <tr style="border:0;">
+      <td style="border:0; padding-bottom:50px;">
 	<ul class="nav nav-tabs" id="resulttabs" data-tabs="tabs">
           <li class="active"><a href="#details<%= task.id %>result<%= result.id %>" data-toggle="tab">Details</a></li>
 	  <li><a href="#edit<%= task.id %>result<%= result.id %>" data-toggle="tab">Edit</a></li>
@@ -28,7 +28,6 @@
             <%= render :partial => "results/history", :locals => { :result => result } %>
 	  </div>
 	</div>
-
       </td>
     </tr>
 <% end %>
