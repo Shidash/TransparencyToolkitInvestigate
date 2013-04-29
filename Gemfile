@@ -49,4 +49,4 @@ gem 'carrierwave'
 gem 'acts-as-taggable-on', '~> 2.3.1'
 gem 'paper_trail'
 gem 'ranked-model'
-gem 'tiny_mce'
+
