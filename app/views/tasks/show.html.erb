@@ -16,11 +16,6 @@
     <br />
     Hours: <%= @task.time %>
     <br />
-    <div align="right">
-      <%= simple_form_for @task, :html => { :class => 'form-inline' } do |f| %>
-      <%= f.input :complete, label: 'Task Complete?' %>
-      <% end %>
-    </div>
  </div>
  <div class="tab-pane" id="edittask<%= @task.id %>">
    <%= render :partial => "editform", :locals => { :task => @task } %>
@@ -29,7 +24,7 @@
         <%= render :partial => "history", :locals => { :task => @task } %>
  </div>
 </div>
-<br />
+<br /><br /><br />
 
 <%= render :partial => "results/result", :locals => { :task => @task } %>
 
