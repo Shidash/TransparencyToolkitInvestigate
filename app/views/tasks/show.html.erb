@@ -16,6 +16,8 @@
     <br />
     Hours: <%= @task.time %>
     <br />
+    Allocation: <%= raw @task.tagallocations.map(&:name).map { |t| link_to t, tagallocation_path(t) }.join(', ') %>
+    <br />
  </div>
  <div class="tab-pane" id="edittask<%= @task.id %>">
    <%= render :partial => "editform", :locals => { :task => @task } %>
