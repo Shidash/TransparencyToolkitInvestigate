@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :password, :password_confirmation, :tag_list, :time
+  attr_accessible :email, :name, :password, :password_confirmation, :tag_list, :time, :tasksalloc_list
   has_secure_password
 
   before_save :create_remember_token
@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 8 }
   validates :password_confirmation, presence: true
   acts_as_taggable
+  acts_as_taggable_on :tasksalloc
 
   private
     def create_remember_token
