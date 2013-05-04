@@ -3,15 +3,11 @@
   <h1>Task Match</h1>
 </div>
 
-The following table lists the tasks you can complete with your skillset and
-hours available for this investigation. To learn more about the task and add
-results, please click the task name. If you want to see tasks for different skills, please
+This page lists the tasks you have chosen to complete and the tasks you can
+complete with your skillset and time available. To learn more about the task,
+please click the task name. If you want to see tasks for different skills, please
 <%= link_to "update your skills list", edit_user_path(@user) %> or go to the
 <%= link_to "main page", root_path %>.
 <br /><br />
-Assigned Tasks:
-<br /><br />
-
-Matched Tasks:<br />
 <%= render :partial => "tasks/portal", :locals => {:user => @user } %>
 

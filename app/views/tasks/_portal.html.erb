@@ -1,5 +1,26 @@
 <%- model_class = Task -%>
+<h4>Tasks assigned to you:</h4>
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Tasks</th>
+      <th>Skills Required</th>
+      <th>Hours</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= Task.tagged_with([current_user.name], :any => true).each do |task| %>
+       <tr>
+         <td><%= link_to task.task, task_path(task) %></td>
+         <td><%= task.tag_list %></td>
+         <td><%= task.time %></td>
+       </tr>
+       <% end %>
+  </tbody>
+</table>
+<br />
 
+<h4>Tasks that fit your skills and time available:</h4>
 <table class="table table-condensed">
   <thead>
     <tr>

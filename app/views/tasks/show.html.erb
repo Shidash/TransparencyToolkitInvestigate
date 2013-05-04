@@ -17,10 +17,10 @@
     Hours: <%= @task.time %>
     <br />
     <%= simple_form_for @task, :html => { :class => 'form-inline' } do |f| %>
-    <%= check_box_tag 'usersalloc_list[]', current_user.name %>
+    
     <%= f.submit 'Update', :class => 'btn-primary btn-small' %>
     <% end %>
-    Users allocated: <%= @task.usersalloc_list %>
+    Users completing task: <%= @task.usersalloc_list %>
     <br />
  </div>
  <div class="tab-pane" id="edittask<%= @task.id %>">
