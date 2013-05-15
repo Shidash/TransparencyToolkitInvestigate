@@ -10,6 +10,10 @@ class ResultsController < ApplicationController
     end
   end
 
+  def emailtimeline
+    @result = Result.find(params[:id])
+  end
+
   # GET /results/1
   # GET /results/1.json
   def show

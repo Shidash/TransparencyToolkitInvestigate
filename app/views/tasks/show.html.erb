@@ -18,11 +18,6 @@
     <br />
     Users working on task: <%= @task.usersalloc_list %>
     <br />
-    <%= simple_form_for @task, :html => { :class => 'form-inline' } do |f| %>
-    <%= f.input :usersalloc_list, as: :checkbox %>
-    <%= f.submit 'Update', :class => 'btn-primary btn-small' %>
-    <% end %>
-    <br />
  </div>
  <div class="tab-pane" id="edittask<%= @task.id %>">
    <%= render :partial => "editform", :locals => { :task => @task } %>
