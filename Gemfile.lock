@@ -120,7 +120,7 @@ GEM
     tilt (1.3.7)
     timelineJS-rails (1.1.0)
       jquery-rails
-    timelinegen (0.0.0)
+    timelinegen (0.0.2)
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
