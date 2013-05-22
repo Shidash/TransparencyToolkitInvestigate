@@ -9,6 +9,24 @@
     </div>
     <div id="addresult<%= task.id %>" class="accordion-body collapse">
       <div class="accordion-inner">
+	
+<div class="container">    
+<div id="plugin" class="modal hide fade in" style="display: none; ">  
+<div class="modal-header">  
+<a class="close" data-dismiss="modal">×</a>  
+<h3>Add a Plugin</h3>  
+</div>  
+<div class="modal-body">  
+<p>Select the plugin you want to add below.</p>                
+</div>  
+<div class="modal-footer">  
+<a href="#" class="btn btn-primary">Add Plugin</a>  
+<a href="#" class="btn" data-dismiss="modal">Close</a>  
+</div>  
+</div>  
+<p><a data-toggle="modal" href="#plugin" class="btn btn-primary btn-small">Add Plugin</a></p>  
+</div>  
+
 	<%= f.file_field :document, label: false %>
 	<div align="right">
 	  <%= f.submit 'Add Results', :class => 'btn-primary btn-small' %>
