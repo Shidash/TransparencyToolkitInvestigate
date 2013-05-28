@@ -12,7 +12,9 @@
                     type:       'timeline',
                     width:      '800',
                     height:     '600',
-                    source: <%= raw TimelineGen.genTimeline(TimelineGen.parseEvents("public"+result.document.url))%>,
+                    source: 
+	    <%= raw TimelineGen.genTimeline(TimelineGen.parseEvents("public"+result.document.url),
+                TimelineGen.parseHeadline("public"+result.document.url)) %>,
                     embed_id:   'time_line'
                 });
             });
