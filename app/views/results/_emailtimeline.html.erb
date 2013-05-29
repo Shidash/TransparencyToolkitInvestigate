@@ -1,9 +1,8 @@
 <%- model_class = Result -%>
     <head>
-      
+        
         <!-- jQuery -->
-        <script type="text/javascript"
-        src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <!-- BEGIN TimelineJS -->
         <script type="text/javascript" src="js/storyjs-embed.js"></script>
         <script type="text/javascript">
@@ -12,9 +11,7 @@
                     type:       'timeline',
                     width:      '800',
                     height:     '600',
-                    source: 
-	    <%= raw TimelineGen.genTimeline(TimelineGen.parseEvents("public"+result.document.url),
-                TimelineGen.parseHeadline("public"+result.document.url)) %>,
+                    source: <%= raw TimelineGen.emailTimeline(open(result.document.url)) %>,
                     embed_id:   'time_line'
                 });
             });

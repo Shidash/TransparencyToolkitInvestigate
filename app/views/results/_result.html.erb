@@ -19,9 +19,11 @@
 	<div class="tab-content">
           <div class="tab-pane active" id="details<%= task.id%>result<%= result.id %>">
 	    <%= result.description %><br /><br />
-	    <%= render :partial => "results/emailtimeline", :locals => { :result => result } if result.document.url %><br />
-	    <%= link_to(result.document.identifier, result.document.url) if
-            result.document.url %>
+	    <% if result.document.url %>
+	    <%= render :partial => "results/emailtimeline", :locals => { :result => result } %>
+	    <br />
+	    <%= link_to(result.document.url, result.document.url) %>
+	    <% end %>
 	  </div>
 	  <div class="tab-pane" id="edit<%= task.id %>result<%= result.id %>">
 	    <%= render :partial => "results/editform", :locals => { :result => result, :task => task } %>

@@ -6,6 +6,7 @@ CarrierWave.configure do |config|
   if Rails.env.development? || Rails.env.test?
     CarrierWave.configure do |config|
       config.storage = :file
+      config.root = "#{Rails.root}/tmp"
     end
   end
 
@@ -20,10 +21,10 @@ CarrierWave.configure do |config|
     :provider               => 'AWS',                             # required
     :aws_access_key_id      => '<your key goes here>',            # required
     :aws_secret_access_key  => '<your secret key goes here>',     # required
-    :region                 => 'eu-west-1'                        # optional, defaults to 'us-east-1'
   }
+  config.cache_dir = "#{Rails.root}/tmp/uploads"
   config.fog_directory  = '<bucket name goes here>'               # required
   #config.fog_host       = 'https://assets.example.com'           # optional, defaults to nil
-  #config.fog_public     = false                                  # optional, defaults to true
+  config.fog_public     = true                                  # optional, defaults to true
   config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}  # optional, defaults to {}
 end
