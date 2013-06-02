@@ -1,4 +1,4 @@
-This is a platform for collaborative investigation and a toolkit for disclosure of meaningful and actionable information. See http://transparencytoolkit.org for more information.
+This is a platform for collaborative investigation with tools to help with collection, analysis, and release of data. Currently it is mostly a system for defining what info you need and collecting it, but some of the first set of analysis tools work if you upload a JSON file with emails in it. See http://transparencytoolkit.org for more information.
 
 Also see the following Transparency Toolkit tools:
 https://github.com/Shidash/gifilesscraper (best run on ScraperWiki at https://scraperwiki.com/scrapers/stratforscraper/)
